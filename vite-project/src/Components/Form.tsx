@@ -22,7 +22,7 @@ const Form = ({ setUserInfo }: FormProps) => {
   const [introduce, setIntroduce] = useState("");
   const [selectedSkills, setSelectedSkills] = useState<string[]>([]);
 
-  const handleSubmin = (e: React.FormEvent) => {
+  const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     setUserInfo({
       name: name,
@@ -87,7 +87,7 @@ const Form = ({ setUserInfo }: FormProps) => {
               onChange={(e) => setIntroduce(e.target.value)}
             />
           </div>
-          <button onClick={handleSubmin} className="submit-button">
+          <button onClick={handleSubmit} className="submit-button">
             제출
           </button>
         </form>

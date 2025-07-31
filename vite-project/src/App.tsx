@@ -18,7 +18,7 @@ function App() {
       {/* <Form  setUserInfo={setUserInfo} />
       <Card userInfo={userInfo} /> */}
       <Form setUserInfo={setUserInfo} />
-      <Card />
+      <Card getUserInfo={userInfo} />
     </div>
   );
 }
