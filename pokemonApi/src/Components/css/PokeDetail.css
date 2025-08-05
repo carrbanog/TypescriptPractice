@@ -1,0 +1,130 @@
+.pokomon-detail-card {
+  max-width: 600px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background: linear-gradient(135deg, #f0f8ff 0%, #e6f3ff 100%);
+  border-radius: 20px;
+  box-shadow: 0 8px 32px rgba(44, 90, 160, 0.12);
+  border: 1px solid #e6f3ff;
+  text-align: center;
+}
+
+.pokemon-detail-name {
+  color: #2c5aa0;
+  font-size: 2.2rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  letter-spacing: 1px;
+}
+
+.pokomon-detail-card img {
+  width: 180px;
+  height: 180px;
+  object-fit: contain;
+  margin-bottom: 1.5rem;
+  filter: drop-shadow(0 4px 12px rgba(44, 90, 160, 0.15));
+}
+
+.types {
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+.types h3 {
+  color: #357abd;
+  font-size: 1.1rem;
+  margin-bottom: 0.3rem;
+  display: inline-block;
+  margin-right: 0.5rem;
+}
+.types ul {
+  display: inline-flex;
+  gap: 0.5rem;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  vertical-align: middle;
+}
+.types li {
+  background: linear-gradient(135deg, #4a90e2 0%, #357abd 100%);
+  color: #fff;
+  padding: 0.4rem 1.1rem;
+  border-radius: 16px;
+  font-weight: 600;
+  font-size: 1rem;
+  box-shadow: 0 2px 8px rgba(74, 144, 226, 0.15);
+  text-transform: capitalize;
+  display: inline-block;
+}
+
+.abilities {
+  margin-bottom: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+.abilities h3 {
+  color: #357abd;
+  font-size: 1.1rem;
+  margin-bottom: 0.3rem;
+  display: inline-block;
+  margin-right: 0.5rem;
+}
+.abilities-list {
+  display: inline-flex;
+  gap: 0.5rem;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  vertical-align: middle;
+}
+.abilities-list li {
+  background: linear-gradient(135deg, #4a90e2 0%, #357abd 100%);
+  color: #fff;
+  padding: 0.4rem 1.1rem;
+  border-radius: 16px;
+  font-weight: 600;
+  font-size: 1rem;
+  box-shadow: 0 2px 8px rgba(74, 144, 226, 0.15);
+  text-transform: capitalize;
+  display: inline-block;
+}
+
+.moves {
+  margin-top: 2rem;
+}
+
+.moves h3 {
+  color: #357abd;
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+
+@media (max-width: 600px) {
+  .pokomon-detail-card {
+    padding: 1rem;
+  }
+  .pokemon-detail-name {
+    font-size: 1.5rem;
+  }
+  .pokomon-detail-card img {
+    width: 120px;
+    height: 120px;
+  }
+  .types ul,
+  .abilities-list {
+    gap: 0.3rem;
+  }
+  .types li,
+  .abilities-list li {
+    font-size: 0.9rem;
+    padding: 0.3rem 0.7rem;
+  }
+  .types h3,
+  .abilities h3 {
+    font-size: 1rem;
+  }
+}

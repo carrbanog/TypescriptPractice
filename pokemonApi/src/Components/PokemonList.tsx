@@ -3,6 +3,7 @@ import { useQuery } from "@tanstack/react-query";
 import { getPokemonList } from "../Api/PokeApi";
 import type { Pokemon } from "../types/PoekmonType";
 import { Link } from "react-router-dom";
+import "./PokemonList.css";
 
 const PokemonList = () => {
   const {

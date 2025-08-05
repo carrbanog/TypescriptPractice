@@ -1,0 +1,149 @@
+.poke-detail-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem;
+  background: linear-gradient(135deg, #f0f8ff 0%, #e6f3ff 100%);
+  min-height: 100vh;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.poke-detail-header {
+  text-align: center;
+  margin-bottom: 2rem;
+  color: #2c5aa0;
+  font-size: 2.5rem;
+  font-weight: 600;
+  text-shadow: 0 2px 4px rgba(44, 90, 160, 0.1);
+}
+
+.poke-detail-card {
+  background: white;
+  border-radius: 16px;
+  padding: 2rem;
+  box-shadow: 0 8px 32px rgba(44, 90, 160, 0.1);
+  border: 1px solid rgba(44, 90, 160, 0.1);
+  margin-bottom: 2rem;
+}
+
+.poke-detail-info {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  margin-top: 1.5rem;
+}
+
+.poke-detail-section {
+  background: #f8fbff;
+  padding: 1.5rem;
+  border-radius: 12px;
+  border-left: 4px solid #4a90e2;
+}
+
+.poke-detail-section h3 {
+  color: #2c5aa0;
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.poke-detail-section p {
+  color: #4a5568;
+  line-height: 1.6;
+  margin: 0.5rem 0;
+}
+
+.poke-detail-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.stat-item {
+  background: white;
+  padding: 1rem;
+  border-radius: 8px;
+  border: 1px solid #e2e8f0;
+  text-align: center;
+}
+
+.stat-label {
+  color: #2c5aa0;
+  font-weight: 600;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.stat-value {
+  color: #4a5568;
+  font-size: 1.1rem;
+  font-weight: 500;
+  margin-top: 0.5rem;
+}
+
+.loading-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 400px;
+  color: #2c5aa0;
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+.error-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 400px;
+  color: #e53e3e;
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+.poke-image {
+  width: 200px;
+  height: 200px;
+  object-fit: contain;
+  margin: 0 auto 1.5rem;
+  display: block;
+  filter: drop-shadow(0 4px 8px rgba(44, 90, 160, 0.2));
+}
+
+.poke-types {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: center;
+  margin: 1rem 0;
+}
+
+.type-badge {
+  background: linear-gradient(135deg, #4a90e2 0%, #357abd 100%);
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-transform: capitalize;
+  box-shadow: 0 2px 8px rgba(74, 144, 226, 0.3);
+}
+
+@media (max-width: 768px) {
+  .poke-detail-container {
+    padding: 1rem;
+  }
+
+  .poke-detail-info {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .poke-detail-header {
+    font-size: 2rem;
+  }
+
+  .poke-detail-card {
+    padding: 1.5rem;
+  }
+}
