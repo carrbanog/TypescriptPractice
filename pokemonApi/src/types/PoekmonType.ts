@@ -34,5 +34,10 @@ export interface PokemonDetailTypes {
       url: string;
     };
   }[];
+  stats: {
+    base_stat: number;
+  }[];
+
+  // stats는 배열 형태이고 그 배열이 요소는 객체 그 객체안에 base_stat라는 숫자가 있다
   moves: Move[];
 }
