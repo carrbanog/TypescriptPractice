@@ -20,7 +20,7 @@ const PokeDetail = () => {
     isLoading,
     isError,
   } = useQuery<PokemonDetailTypes>({
-    queryKey: ["pokemonDetails", name],
+    queryKey: ["pokemonDetails", name], //querykey가 같아서 api data를 안받올때 있어서 이름도 키로 추가가
     queryFn: () => getPokemonDetails(name!),
   });
   // console.log(pokemonList[currentIndex].name);
