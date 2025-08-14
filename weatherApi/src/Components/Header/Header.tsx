@@ -14,7 +14,9 @@ const Header = () => {
         </Link>
         <li className="graph">변동 그래프</li>
         <li className="air">대기질 지수</li>
-        <li className="favorite-list">즐겨찾기</li>
+        <Link to={`/favorite`}>
+          <li className="favorite-list">즐겨찾기</li>
+        </Link>
         <li className="news">관련 뉴스</li>
       </ul>
       <div className="sns">인스타</div>
