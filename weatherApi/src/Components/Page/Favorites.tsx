@@ -1,28 +1,37 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { favariteCityManager } from "../../assets/Utils/FavoriteManager";
 import { useQuery } from "@tanstack/react-query";
 import type { Weather } from "../../Types/WeatherType";
-import { fetchWeather } from "../../assets/Api/WeatherApi";
-import WeatherCard from "../Common/WeatherCard";
+import { getWeatherApi } from "../../assets/Api/WeatherApi";
+import FavoriteWeatherCard from "../Common/FavoriteWeatherCard";
 
-const Favorites = () => {
-  const [favorites, setFavorites] = useState<string[]>(
-    favariteCityManager.list()
-  );
-  const { data, isLoading, isError } = useQuery<Weather>({
-    queryKey: ["weather", favorites],
-    queryFn: () => fetchWeather(favorites[0]),
+const Favorites: React.FC = () => {
+  const [favorites, setFavorites] = useState<string[]>([]);
+
+  // localStorage에서 즐겨찾기 불러오기
+  useEffect(() => {
+    const storedFavorites = favariteCityManager.list();
+    setFavorites(storedFavorites);
+  }, []);
+
+  const { data, isLoading, isError, refetch } = useQuery<Weather[]>({
+    queryKey: ["favoriteWeather"],
+    queryFn: () => getWeatherApi.fetchFavoriteWeather(favorites),
     enabled: favorites.length > 0,
   });
-  console.log(favorites);
-  console.log(data);
+
+  // favorites가 바뀌면 자동으로 refetch
+  useEffect(() => {
+    if (favorites.length > 0) refetch();
+  }, [favorites, refetch]);
 
   if (favorites.length === 0) return <p>즐겨찾기한 도시가 없습니다.</p>;
   if (isLoading) return <p>로딩 중...</p>;
+  if (isError) return <p>데이터를 불러오는데 실패했습니다.</p>;
 
   return (
-    <div>
-      <WeatherCard data={data} />
+    <div className="favorite-weather-container">
+      {data && <FavoriteWeatherCard FavoriteWeatherdata={data} />}
     </div>
   );
 };

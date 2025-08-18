@@ -7,6 +7,7 @@ interface WeatherCardProps {
 }
 
 const WeatherCard = ({ data, handleAddFavorite }: WeatherCardProps) => {
+  console.log(data);
   return (
     <div className="weather-card">
       <div className="weather-info">

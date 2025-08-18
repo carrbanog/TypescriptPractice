@@ -1,11 +1,14 @@
 import React, { useState } from "react";
 import { useQuery } from "@tanstack/react-query";
-import { fetchWeather } from "../../assets/Api/WeatherApi";
+import { getWeatherApi } from "../../assets/Api/WeatherApi";
 import type { Weather } from "../../Types/WeatherType";
 
 import "./Search.css";
 import { favariteCityManager } from "../../assets/Utils/FavoriteManager";
 import WeatherCard from "../Common/WeatherCard";
+
+//즐겨찾기 추가, 삭제, 리스트 보기 클래스
+// const FavoriteAdd = new FavoriteManger<string>();
 
 const Search: React.FC = () => {
   const [city, setCity] = useState<string>("");
@@ -13,7 +16,7 @@ const Search: React.FC = () => {
 
   const { data, isLoading, isError } = useQuery<Weather>({
     queryKey: ["weather", city],
-    queryFn: () => fetchWeather(city),
+    queryFn: () => getWeatherApi.fetchWeather(city),
     enabled: !!city,
   });
 
@@ -46,27 +49,6 @@ const Search: React.FC = () => {
         </button>
       </form>
 
-      {/* {data && (
-        <div className="weather-card">
-          <div className="weather-info">
-            <h2>{data.name}의 현재 날씨</h2>
-            <p>기온: {data.main.temp}°C</p>
-            <p>체감 온도: {data.main.feels_like}°C</p>
-            <p>습도: {data.main.humidity}%</p>
-            <p>풍속: {data.wind.speed} m/s</p>
-            <p>날씨: {data.weather[0].description}</p>
-            <button className="add-favorite" onClick={handleAddFavorite}>
-              즐겨찾기 추가
-            </button>
-          </div>
-          <div className="weather-icon">
-            <img
-              src={`https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`}
-              alt="weather icon"
-            />
-          </div>
-        </div>
-      )} */}
       {data && (
         <WeatherCard
           data={data}
