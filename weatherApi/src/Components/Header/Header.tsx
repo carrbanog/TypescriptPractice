@@ -12,7 +12,10 @@ const Header = () => {
         <Link to={`/search`}>
           <li className="search">지역 검색</li>
         </Link>
-        <li className="graph">변동 그래프</li>
+        <Link to={`/weeklyweathergraph`}>
+          <li className="graph">변동 그래프</li>
+        </Link>
+
         <li className="air">대기질 지수</li>
         <Link to={`/favorite`}>
           <li className="favorite-list">즐겨찾기</li>

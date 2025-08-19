@@ -1,9 +1,9 @@
-import { useState } from "react";
 import Header from "./Components/Header/Header";
-import Main from "./Components/Page/Main";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Search from "./Components/Page/Search";
-import Favorites from "./Components/Page/Favorites";
+import FavoritesPage from "./Components/Page/FavoritesPage";
+import SearchPage from "./Components/Page/SearchPage";
+import WeeklyWeatherPage from "./Components/Page/WeeklyWeatherPage";
+import HomePage from "./Components/Page/HomePage";
 
 // import "./App.css";
 
@@ -13,9 +13,10 @@ function App() {
       <Router>
         <Header />
         <Routes>
-          <Route path="/" element={<Main />} />
-          <Route path="/search" element={<Search />} />
-          <Route path="/favorite" element={<Favorites />} />
+          <Route path="/" element={<HomePage />} />
+          <Route path="/search" element={<SearchPage />} />
+          <Route path="/weeklyweathergraph" element={<WeeklyWeatherPage />} />
+          <Route path="/favorite" element={<FavoritesPage />} />
         </Routes>
       </Router>
     </div>

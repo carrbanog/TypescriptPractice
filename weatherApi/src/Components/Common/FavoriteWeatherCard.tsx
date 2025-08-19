@@ -2,12 +2,18 @@ import React from "react";
 import type { Weather } from "../../Types/WeatherType";
 import "./FavoriteWeatherCard.css";
 
+import { MdDelete } from "react-icons/md";
+import { favariteCityManager } from "../../assets/Utils/FavoriteManager";
+
 interface FavoriteWeatherCardProps {
   FavoriteWeatherdata: Weather[];
+  onRemove: (city: string) => void;
 }
 const FavoriteWeatherCard: React.FC<FavoriteWeatherCardProps> = ({
   FavoriteWeatherdata,
+  onRemove,
 }) => {
+  console.log(FavoriteWeatherdata[0].name);
   return (
     <div className="favorite-weather-card">
       {FavoriteWeatherdata.map((data: Weather) => (
@@ -21,6 +27,9 @@ const FavoriteWeatherCard: React.FC<FavoriteWeatherCardProps> = ({
               alt="weather icon"
             />
           </div>
+          <button className="delete" onClick={() => onRemove(data.name)}>
+            <MdDelete />
+          </button>
         </div>
       ))}
     </div>

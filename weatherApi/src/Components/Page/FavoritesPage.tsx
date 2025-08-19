@@ -5,7 +5,7 @@ import type { Weather } from "../../Types/WeatherType";
 import { getWeatherApi } from "../../assets/Api/WeatherApi";
 import FavoriteWeatherCard from "../Common/FavoriteWeatherCard";
 
-const Favorites: React.FC = () => {
+const FavoritesPage: React.FC = () => {
   const [favorites, setFavorites] = useState<string[]>([]);
 
   // localStorage에서 즐겨찾기 불러오기
@@ -25,15 +25,25 @@ const Favorites: React.FC = () => {
     if (favorites.length > 0) refetch();
   }, [favorites, refetch]);
 
+  const handleRemove = (city: string) => {
+    favariteCityManager.remove(city.toLowerCase());
+    setFavorites(favariteCityManager.list());
+  };
+
   if (favorites.length === 0) return <p>즐겨찾기한 도시가 없습니다.</p>;
   if (isLoading) return <p>로딩 중...</p>;
   if (isError) return <p>데이터를 불러오는데 실패했습니다.</p>;
 
   return (
     <div className="favorite-weather-container">
-      {data && <FavoriteWeatherCard FavoriteWeatherdata={data} />}
+      {data && (
+        <FavoriteWeatherCard
+          FavoriteWeatherdata={data}
+          onRemove={handleRemove}
+        />
+      )}
     </div>
   );
 };
 
-export default Favorites;
+export default FavoritesPage;

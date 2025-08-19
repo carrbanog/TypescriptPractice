@@ -15,6 +15,12 @@ export class FavoriteManger<T> {
       localStorage.setItem("favorite", JSON.stringify(this.favorites));
     }
   }
+
+  remove(item: T) {
+    this.favorites = this.favorites.filter((fav) => fav !== item);
+    localStorage.setItem("favorite", JSON.stringify(this.favorites));
+  }
+
   list(): T[] {
     return [...this.favorites];
   }
