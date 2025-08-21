@@ -4,7 +4,7 @@ export const useCitySearch = () => {
   const [input, setInput] = useState("");
   const [city, setCity] = useState("");
 
-  const handleSubmit = (e: React.MouseEvent<HTMLButtonElement>) => {
+  const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     setCity(input.trim());
   };

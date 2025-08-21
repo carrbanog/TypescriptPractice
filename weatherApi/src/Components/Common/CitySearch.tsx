@@ -3,7 +3,7 @@ import React from "react";
 interface CitySearchProps {
   input: string;
   setInput: React.Dispatch<React.SetStateAction<string>>;
-  handleSubmit: (e: React.MouseEvent<HTMLButtonElement>) => void;
+  handleSubmit: (e: React.FormEvent) => void;
 }
 
 const CitySearch = ({ input, setInput, handleSubmit }: CitySearchProps) => {

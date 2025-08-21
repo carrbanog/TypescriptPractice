@@ -17,3 +17,13 @@ export interface WeatherMain {
   feels_like: number;
   humidity: number;
 }
+
+export interface WeeklyWeather {
+  list: {
+    dt_txt: string;
+    main: {
+      temp: number;
+      feels_like: number;
+    };
+  }[];
+}
