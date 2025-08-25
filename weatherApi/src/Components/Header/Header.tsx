@@ -20,7 +20,9 @@ const Header = () => {
         <Link to={`/favorite`}>
           <li className="favorite-list">즐겨찾기</li>
         </Link>
-        <li className="news">관련 뉴스</li>
+        <li className="news">
+          <Link to={`/news`}>관련 뉴스</Link>
+        </li>
       </ul>
       <div className="sns">인스타</div>
     </div>
