@@ -1,0 +1,190 @@
+.homepage-container {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.search-container {
+  padding: 1rem;
+  background-color: white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+}
+
+.search-wrapper {
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.search-input {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 1px solid #d1d5db;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.search-input:focus {
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+.search-button {
+  width: 100%;
+  margin-top: 0.5rem;
+  padding: 0.75rem 1rem;
+  background-color: #3b82f6;
+  color: white;
+  border: none;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.search-button:hover {
+  background-color: #2563eb;
+}
+
+.search-button:active {
+  transform: translateY(1px);
+}
+
+.map-controls {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.control-button {
+  padding: 0.5rem 1rem;
+  background-color: #f3f4f6;
+  color: #374151;
+  border: 1px solid #d1d5db;
+  border-radius: 0.5rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.control-button:hover {
+  background-color: #e5e7eb;
+}
+
+.control-button.active {
+  background-color: #3b82f6;
+  color: white;
+  border-color: #3b82f6;
+}
+
+.style-buttons {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.style-button {
+  padding: 0.5rem 0.75rem;
+  background-color: #f3f4f6;
+  color: #374151;
+  border: 1px solid #d1d5db;
+  border-radius: 0.5rem;
+  font-size: 0.75rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.style-button:hover {
+  background-color: #e5e7eb;
+}
+
+.style-button.active {
+  background-color: #10b981;
+  color: white;
+  border-color: #10b981;
+}
+
+.map-container {
+  flex: 1;
+  position: relative;
+}
+
+.map-marker {
+  width: 32px;
+  height: 32px;
+  background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+  border-radius: 50% 50% 50% 0;
+  border: 3px solid white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  transform: rotate(-45deg);
+  position: relative;
+}
+
+.map-marker::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 8px;
+  height: 8px;
+  background-color: white;
+  border-radius: 50%;
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.map-marker:hover {
+  transform: rotate(-45deg) scale(1.2);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+}
+
+/* 반응형 디자인 */
+@media (max-width: 768px) {
+  .search-wrapper {
+    max-width: 100%;
+  }
+
+  .search-container {
+    padding: 0.75rem;
+  }
+
+  .map-controls {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .style-buttons {
+    justify-content: center;
+  }
+}
+
+/* Weather home layout */
+.home-container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 16px;
+}
+
+.graph-section {
+  margin-top: 24px;
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 16px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+}
+
+.graph-title {
+  margin: 8px 0 16px;
+  font-size: 18px;
+  font-weight: 600;
+}

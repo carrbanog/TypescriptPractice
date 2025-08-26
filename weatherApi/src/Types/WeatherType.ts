@@ -27,3 +27,12 @@ export interface WeeklyWeather {
     };
   }[];
 }
+
+export interface NewsItem {
+  results: {
+    title: string;
+    image_url: string;
+    pubDate: string;
+    link: string;
+  }[];
+}
